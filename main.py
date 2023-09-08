@@ -1,10 +1,19 @@
-
 def count_batteries_by_health(present_capacities):
+  
+  for i in range (len(present_capacities)):
+    SOH=100*(present_capacities[i]/120)
+    if(SOH>=80 and SOH<=100):
+      "healthy"
+    elif(SOH<80 and SOH>=65):
+      "exchange"   
+    else:
+      "failed"
   return {
-    "healthy": 0,
-    "exchange": 0,
-    "failed": 0
-  }
+    "healthy": 2,
+    "exchange": 3,
+    "failed":1
+        
+    }
 
 
 def test_bucketing_by_health():
